@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Password Gate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+        #box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h2>Enter Password</h2>
+    <input type="password" id="pw" placeholder="Password">
+    <button onclick="check()">Submit</button>
+    <p id="msg" style="color:red;"></p>
+</div>
+
+<script>
+    const correctPassword = "3043987574768504984745098745"; 
+    const redirectURL = "https://docs.google.com/document/d/1nEKfvtoIjbyIwgveqcrevtoTmHFiZMnIMqNjeiUZXUE/edit?tab=t.0";
+
+    function check() {
+        const input = document.getElementById("pw").value;
+        if (input === correctPassword) {
+            window.location.href = redirectURL;
+        } else {
+            document.getElementById("msg").textContent = "Incorrect password.";
+        }
+    }
+</script>
+</body>
+</html>
